@@ -13,8 +13,16 @@ La fonction doit retourner un objet contenant ces trois propriétés :
 */
 
 // Ecris ton code après cette ligne
-function createUser(nom, age, estConnecte) {
-    
+   
+function createUser(nom, age, estConnecté) {
+    const user = {
+        nom : nom,
+        age : age,
+        estConnecté
+    }
+
+    return user
+
 }
 // Ne pas modifier la ligne suivante
 module.exports = { createUser }
