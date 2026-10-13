@@ -1,0 +1,260 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: exercice-1a
+      id: exercice-1a
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-1a
+        setup-command: npm install
+        command: npm run test exercice-1.test.js -- --subtest=a
+        timeout: 10
+        max-score: 1
+    - name: exercice-1b
+      id: exercice-1b
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-1b
+        setup-command: npm install
+        command: npm run test exercice-1.test.js -- --subtest=b
+        timeout: 10
+        max-score: 1
+    - name: exercice-1c
+      id: exercice-1c
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-1c
+        setup-command: npm install
+        command: npm run test exercice-1.test.js -- --subtest=c
+        timeout: 10
+        max-score: 1
+    - name: exercice-2a
+      id: exercice-2a
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-2a
+        setup-command: npm install
+        command: npm run test exercice-2.test.js -- --subtest=a
+        timeout: 10
+        max-score: 1
+    - name: exercice-2b
+      id: exercice-2b
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-2b
+        setup-command: npm install
+        command: npm run test exercice-2.test.js -- --subtest=b
+        timeout: 10
+        max-score: 1
+    - name: exercice-2c
+      id: exercice-2c
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-2c
+        setup-command: npm install
+        command: npm run test exercice-2.test.js -- --subtest=c
+        timeout: 10
+        max-score: 1
+    - name: exercice-2d
+      id: exercice-2d
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-2d
+        setup-command: npm install
+        command: npm run test exercice-2.test.js -- --subtest=d
+        timeout: 10
+        max-score: 1
+    - name: exercice-3a
+      id: exercice-3a
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-3a
+        setup-command: npm install
+        command: npm run test exercice-3.test.js -- --subtest=a
+        timeout: 10
+        max-score: 1
+    - name: exercice-3b
+      id: exercice-3b
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-3b
+        setup-command: npm install
+        command: npm run test exercice-3.test.js -- --subtest=b
+        timeout: 10
+        max-score: 1
+    - name: exercice-3c
+      id: exercice-3c
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-3c
+        setup-command: npm install
+        command: npm run test exercice-3.test.js -- --subtest=c
+        timeout: 10
+        max-score: 1
+    - name: exercice-3d
+      id: exercice-3d
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-3d
+        setup-command: npm install
+        command: npm run test exercice-3.test.js -- --subtest=d
+        timeout: 10
+        max-score: 1
+    - name: exercice-4a
+      id: exercice-4a
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-4a
+        setup-command: npm install
+        command: npm run test exercice-4.test.js -- --subtest=a
+        timeout: 10
+        max-score: 1
+    - name: exercice-4b
+      id: exercice-4b
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-4b
+        setup-command: npm install
+        command: npm run test exercice-4.test.js -- --subtest=b
+        timeout: 10
+        max-score: 1
+    - name: exercice-4c
+      id: exercice-4c
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-4c
+        setup-command: npm install
+        command: npm run test exercice-4.test.js -- --subtest=c
+        timeout: 10
+        max-score: 1
+    - name: exercice-4d
+      id: exercice-4d
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-4d
+        setup-command: npm install
+        command: npm run test exercice-4.test.js -- --subtest=d
+        timeout: 10
+        max-score: 1
+    - name: exercice-4e
+      id: exercice-4e
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-4e
+        setup-command: npm install
+        command: npm run test exercice-4.test.js -- --subtest=e
+        timeout: 10
+        max-score: 1
+    - name: exercice-4f
+      id: exercice-4f
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-4f
+        setup-command: npm install
+        command: npm run test exercice-4.test.js -- --subtest=f
+        timeout: 10
+        max-score: 1
+    - name: exercice-5a
+      id: exercice-5a
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-5a
+        setup-command: npm install
+        command: npm run test exercice-5.test.js -- --subtest=a
+        timeout: 10
+        max-score: 1
+    - name: exercice-5b
+      id: exercice-5b
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-5b
+        setup-command: npm install
+        command: npm run test exercice-5.test.js -- --subtest=b
+        timeout: 10
+        max-score: 1
+    - name: exercice-5c
+      id: exercice-5c
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-5c
+        setup-command: npm install
+        command: npm run test exercice-5.test.js -- --subtest=c
+        timeout: 10
+        max-score: 1
+    - name: exercice-5d
+      id: exercice-5d
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-5d
+        setup-command: npm install
+        command: npm run test exercice-5.test.js -- --subtest=d
+        timeout: 10
+        max-score: 1
+    - name: exercice-5e
+      id: exercice-5e
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-5e
+        setup-command: npm install
+        command: npm run test exercice-5.test.js -- --subtest=e
+        timeout: 10
+        max-score: 1
+    - name: exercice-5f
+      id: exercice-5f
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-5f
+        setup-command: npm install
+        command: npm run test exercice-5.test.js -- --subtest=f
+        timeout: 10
+        max-score: 1
+    - name: exercice-5g
+      id: exercice-5g
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: exercice-5g
+        setup-command: npm install
+        command: npm run test exercice-5.test.js -- --subtest=g
+        timeout: 10
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        EXERCICE-1A_RESULTS: "${{steps.exercice-1a.outputs.result}}"
+        EXERCICE-1B_RESULTS: "${{steps.exercice-1b.outputs.result}}"
+        EXERCICE-1C_RESULTS: "${{steps.exercice-1c.outputs.result}}"
+        EXERCICE-2A_RESULTS: "${{steps.exercice-2a.outputs.result}}"
+        EXERCICE-2B_RESULTS: "${{steps.exercice-2b.outputs.result}}"
+        EXERCICE-2C_RESULTS: "${{steps.exercice-2c.outputs.result}}"
+        EXERCICE-2D_RESULTS: "${{steps.exercice-2d.outputs.result}}"
+        EXERCICE-3A_RESULTS: "${{steps.exercice-3a.outputs.result}}"
+        EXERCICE-3B_RESULTS: "${{steps.exercice-3b.outputs.result}}"
+        EXERCICE-3C_RESULTS: "${{steps.exercice-3c.outputs.result}}"
+        EXERCICE-3D_RESULTS: "${{steps.exercice-3d.outputs.result}}"
+        EXERCICE-4A_RESULTS: "${{steps.exercice-4a.outputs.result}}"
+        EXERCICE-4B_RESULTS: "${{steps.exercice-4b.outputs.result}}"
+        EXERCICE-4C_RESULTS: "${{steps.exercice-4c.outputs.result}}"
+        EXERCICE-4D_RESULTS: "${{steps.exercice-4d.outputs.result}}"
+        EXERCICE-4E_RESULTS: "${{steps.exercice-4e.outputs.result}}"
+        EXERCICE-4F_RESULTS: "${{steps.exercice-4f.outputs.result}}"
+        EXERCICE-5A_RESULTS: "${{steps.exercice-5a.outputs.result}}"
+        EXERCICE-5B_RESULTS: "${{steps.exercice-5b.outputs.result}}"
+        EXERCICE-5C_RESULTS: "${{steps.exercice-5c.outputs.result}}"
+        EXERCICE-5D_RESULTS: "${{steps.exercice-5d.outputs.result}}"
+        EXERCICE-5E_RESULTS: "${{steps.exercice-5e.outputs.result}}"
+        EXERCICE-5F_RESULTS: "${{steps.exercice-5f.outputs.result}}"
+        EXERCICE-5G_RESULTS: "${{steps.exercice-5g.outputs.result}}"
+      with:
+        runners: exercice-1a,exercice-1b,exercice-1c,exercice-2a,exercice-2b,exercice-2c,exercice-2d,exercice-3a,exercice-3b,exercice-3c,exercice-3d,exercice-4a,exercice-4b,exercice-4c,exercice-4d,exercice-4e,exercice-4f,exercice-5a,exercice-5b,exercice-5c,exercice-5d,exercice-5e,exercice-5f,exercice-5g
