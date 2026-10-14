@@ -16,6 +16,49 @@
 // Dans le cas où l'élève n'a pas de notes, la moyenne doit être considérée comme 0 et le commentaire "À revoir".
 
 // Ecris ton code après cette ligne
+function showStudentBulletin(eleves) {
+    const bulletins = [];
 
+    for (let i = 0; i < eleves.length; i++) {
+        let somme = 0;
+
+        for (let j = 0; j < eleves[i].notes.length; j++) {
+            somme = somme + eleves[i].notes[j];
+        }
+
+        let moyenne;
+
+        if (eleves[i].notes.length === 0) {
+            moyenne = 0;
+        } else {
+            moyenne = somme / eleves[i].notes.length;
+        }
+
+        moyenne = Math.round(moyenne * 100) / 100;
+
+        let commentaire;
+
+        if (moyenne >= 16) {
+            commentaire = "Excellent";
+        } else if (moyenne >= 14) {
+            commentaire = "Très Bien";
+        }else if (moyenne >= 12) {
+            commentaire = "Bien";
+        }else if (moyenne >= 10) {
+            commentaire = "Passable";
+        }else {
+            commentaire = "À revoir";
+        }
+
+        const bulletin = {
+            nom: eleves[i].nom,
+            moyenne: moyenne,
+            commentaire: commentaire
+        }
+        
+        bulletins.push(bulletin);
+    }
+    return bulletins;
+}
 // Ne pas modifier la ligne suivante
 module.exports = { showStudentBulletin }
