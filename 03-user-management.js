@@ -7,5 +7,15 @@
 
 // Ecris ton code après cette ligne
 
+function whoIsAdmin(utilisateurs) {
+    const admins = [];
+
+    for (let i = 0; i < utilisateurs.length; i++) {
+        if (utilisateurs[i].estAdmin) {
+            admins.push(utilisateurs[i].nom);
+        }
+    }
+    return admins;
+}
 // Ne pas modifier la ligne suivante
 module.exports = { whoIsAdmin }
